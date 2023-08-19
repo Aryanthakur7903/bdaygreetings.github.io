@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="Birthday.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  
+
+</head>
+<body>
+    <div>
+        <h1 class="txt1" id="txta">
+            <p class="color">Wishing you the day that is as spacial as you.</p>
+           
+        </h1>
+        <!-- <img class="png1" src="8cxrMxe6i.png" alt=""> -->
+       
+        </div>
+
+
+        
+        <a class="animate__animated animate__infinite animate__delay-7s animate__swing" href="Card.html"><button >Lets Go >>> </button></a>
+
+            
+
+
+  <!-- <h1 class="txt1">Wishing you the day that is as spacial as you</h1>   -->
+    
+
+
+
+    <div class="custom-loader"></div>
+
+    <!-- <audio src="Cat Sings Happy Birthday.mp3 " controls autoplay> -->
+    <!-- </audio> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script> 
+   <script type="text/javascript" src="cssanimation-gsap.js"></script>
+
+
+
+
+
+
+   <!-- <audio controls  autoplay src="Cat Sings Happy Birthday.mp3" loop="true" autobuffer> -->
+
+   </audio>
+   <script>
+   function setCookie(c_name,value,exdays)
+   {
+   var exdate=new Date();
+   exdate.setDate(exdate.getDate() + exdays);
+   var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+   document.cookie=c_name + "=" + c_value;
+   }
+   
+   
+   function getCookie(c_name)
+   {
+   var i,x,y,ARRcookies=document.cookie.split(";");
+   for (i=0;i<ARRcookies.length; i++)
+   {
+   
+   
+   
+   x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+   y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+   x=x.replace(/^\s+|\s+$/g,"");
+   if (x==c_name)
+   {
+   return unescape(y);
+     }
+    }
+   }
+   var song = document.getElementsByTagName('audio')[0];
+   var played = false;
+   var tillPlayed = getCookie('timePlayed');
+   function update()
+   {
+   if(!played){
+   if(tillPlayed){
+   song.currentTime = till Played;
+   song.play();
+   played = true;
+   }
+   else {
+   song.play();
+   
+   
+   played = true;
+   }
+   }
+   else {
+   setCookie('time Played', song.currentTime);
+   }
+   }
+   setInterval(update, 1000);
+   </script>
+   
+
+</body>
+</html>

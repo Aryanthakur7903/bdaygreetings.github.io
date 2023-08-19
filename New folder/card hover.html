@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Hover</title>
+
+    <link rel="stylesheet" href="card hover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+
+</head>
+<body>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <body>
+      <!-- <h1 class="touch">Touch this cards</h1> -->
+      <div class="container ">
+        <div class="card animate__animated  animate__delay-10s animate__slow-1s animate__backInLeft">
+          <div class="front front1">
+            <div class="content">
+              <div class="icon">
+                <!-- <i class="fa-brands fa-instagram"></i> -->
+                <img class="fa-brands fa-codepen" src="./img/1pic.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="front front2">
+            <div class="content">
+              <p>Today’s a special day because it’s the day you were born.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card animate__animated animate__delay-12s animate__slow-2s animate__backInDown">
+          <div class="front front1">
+            <div class="content">
+              <div class="icon">
+                <!-- <i class="fa-brands fa-twitter"></i> -->
+                 <img class="fa-brands-1 fa-codepen" src="./img/IMG_20190819_004824a.JPG" alt=""> 
+              </div>
+            </div>
+          </div>
+          <div class="front front2">
+            <div class="content">
+              <p>Your smile can light up the darkest room.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card animate__animated animate__delay-15s animate__slow-3s animate__backInRight">
+          <div class="front front1">
+            <div class="content">
+              <div class="icon">
+                <!-- <i class="fa-brands fa-codepen"></i> -->
+                <img class="fa-brands fa-codepen" src="./img/1pic.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="front front2">
+            <div class="content">
+              <p> May happiness surround you on your special day and throughout your life. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <a class="animate__animated animate__infinite animate__delay-7s animate__swing" href="pics.html"><button >Lets Go >>> </button></a>
+
+
+      <!-- <audio autoplay src="Cat Sings Happy Birthday.mp3" loop="true" autobuffer> -->
+
+      </audio>
+      <script>
+      function setCookie(c_name,value,exdays)
+      {
+      var exdate=new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+      document.cookie=c_name + "=" + c_value;
+      }
+      
+      
+      function getCookie(c_name)
+      {
+      var i,x,y,ARRcookies=document.cookie.split(";");
+      for (i=0;i<ARRcookies.length; i++)
+      {
+      
+      
+      
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==c_name)
+      {
+      return unescape(y);
+        }
+       }
+      }
+      var song = document.getElementsByTagName('audio')[0];
+      var played = false;
+
+      var tillPlayed = getCookie('timePlayed');
+      function update()
+      {
+      if(!played){
+      if(tillPlayed){
+      song.currentTime = till Played;
+      song.play();
+      played = true;
+      }
+      else {
+      song.play();
+      
+      
+      played = true;
+      }
+      }
+      else {
+      setCookie('time Played', song.currentTime);
+      }
+      }
+      setInterval(update, 1000);
+      </script>
+      
+</body>
+</html>

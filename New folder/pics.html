@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PICS</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="/woah.css">
+
+</head>
+
+<body>
+	<!--
+element-behaviors 👉 https://github.com/lume/element-behaviors
+A part of the Lume library collection 👉 https://lume.io
+-->
+	<script src="https://unpkg.com/element-behaviors@3.1.0/dist/global.js"></script>
+
+
+
+	<!-- Give this element particles! -->
+	<h1 class="animate__animated   animate__zoomIn" has="sparkles">
+		Dear ANU
+	</h1>
+	<div class="img1 animate__animated animate__delay-1s animate__slower animate__zoomInDown"><img src="./img/Removal-76.png" alt=""></div>
+	<table>
+		<!-- Behaviors work on any element (unlike the is="" attribute)! -->
+		<tr class="animate__animated animate__delay-3s animate__slower animate__zoomInDown">
+			<td has="sparkles">Wish you the Happiest Birthday ever</td>
+		</tr>
+	</table>
+
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			background-image: url(./img/1st\ pg\ bg.jpg);
+			height: 700px;
+			width: auto;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.img1 {  position: absolute;
+      /* left: -228px;
+      top: -170px; */
+      /* transform: translate(-396px, -146px); */
+      font-size: 80px;
+      transition: 0.7s;
+      
+      scale: .7;
+
+		}
+
+		h1 {
+			color: rgb(151, 32, 32);
+			;
+			font-size: 100px;
+			 height: 300px;
+		}
+
+		table {
+			color: rgb(151, 114, 32);
+			font-size: 50px;
+			margin-top: 130px;
+		}
+
+		.rotation {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.sparkle {
+			border-radius: 100%;
+			background: #00fff2;
+			animation-name: sparkles;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		.sparkle1 {
+			animation-duration: 0.5s
+		}
+
+		.sparkle2 {
+			animation-duration: 0.8s
+		}
+
+		.sparkle3 {
+			animation-duration: 1s
+		}
+
+		.sparkle4 {
+			animation-duration: 1.4s
+		}
+
+		.sparkle5 {
+			animation-duration: 1.8s
+		}
+
+		.sparkle6 {
+			animation-duration: 2s
+		}
+
+		@keyframes sparkles {
+			0% {
+				transform: translateX(0px);
+				width: 8px;
+				height: 8px;
+			}
+
+			100% {
+				transform: translateX(150px);
+				width: 0px;
+				height: 0px;
+			}
+		}
+	</style>
+
+	<script>
+		// whenDefined() is new:
+		elementBehaviors.whenDefined('sparkles').then(() => {
+			console.log('Sparkles are ready!')
+		})
+
+		// When the sparkles behavior class gets defined *later*, then it will be
+		// instantiated as expected, the above console.log will run, and we'll
+		// have sparkles!
+		setTimeout(() => {
+			class Sparkles {
+				// This is similar to Custom Elements, same life cycle methods, but instances of this class
+				// receive a reference to the host element instead of being the element
+				// itself.
+				// An element can have any number of behaviors (f.e. <h1 has="one two three">).
+
+				rotations = []
+
+				connectedCallback(el) {
+					// Super simplistic particle system for sake of example.
+
+					const box = el.getBoundingClientRect()
+					const centerX = box.x + box.width / 2
+					const centerY = box.y + box.height / 2
+
+					for (const i of Array(50).map((n, i) => i)) {
+						const rotation = document.createElement('div')
+						this.rotations.push(rotation)
+						rotation.classList.add('rotation')
+						rotation.style.transform = `translate3d(${centerX}px, ${centerY}px, 0) rotateZ(${Math.random() * 360}deg)`
+						document.body.append(rotation)
+
+						const spark = document.createElement('div')
+						spark.classList.add('sparkle')
+						spark.classList.add('sparkle' + (Math.round((Math.random() * (6 - 1))) + 1))
+						rotation.append(spark)
+					}
+
+					window.addEventListener('resize', () => {
+						const box = el.getBoundingClientRect()
+						const centerX = box.x + box.width / 2
+						const centerY = box.y + box.height / 2
+						for (const rotation of this.rotations)
+							rotation.style.transform = `translate3d(${centerX}px, ${centerY}px, 0) rotateZ(${Math.random() * 360}deg)`
+					})
+				}
+			}
+
+			elementBehaviors.define('sparkles', Sparkles)
+		}, 10)
+	</script>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Happy Birthday </title>
+  
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+
+
+<body>
+ <h2> First Touch this card</h2>                                                                                                
+<div class="body">                                                                                       
+ <div class="birthdayCard">
+<div class="cardFront"><h3 class="happy">HAPPY BIRTHDAY!</h3>
+<div class="balloons">                                                                                          
+  <div class="balloonOne"></div>
+  <div class="balloonTwo"></div>
+  <div class="balloonThree"></div>
+  <div class="balloonFour"></div>
+</div>
+</div>
+<div class="cardInside">
+    <h3 class="back">HAPPY BIRTHDAY!</h3>
+    <p contenteditable="true">Dear Anu </p> 
+    <p contenteditable="true">Happy birthday!! I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.</p>
+    <p contenteditable="true" class="name">Aryan</p>
+  
+    <!-- <audio src="Cat Sings Happy Birthday.mp3 " control  autoplay></audio> -->
+  </div>
+</div>
+</div>
+
+
+<div>
+  
+ <a href="card hover.html"> <img class="balloon" src="./img/8cxrMxe6i.png" alt=""></a>
+
+ <a href="card hover.html"> <img class="balloon1" src="./img/8cxrMxe6i.png" alt=""></a>
+ 
+  <!-- <img class="balloon1" src="8cxrMxe6i.png" alt=""> -->
+
+
+</div>
+
+<div class="clickballoon">
+  click on balloon
+</div>
+
+
+<!-- <audio controls autoplay  src="Cat Sings Happy Birthday.mp3" loop="true" autobuffer> -->
+
+</audio>
+<script>
+function setCookie(c_name,value,exdays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+document.cookie=c_name + "=" + c_value;
+}
+
+
+function getCookie(c_name)
+{
+var i,x,y,ARRcookies=document.cookie.split(";");
+for (i=0;i<ARRcookies.length; i++)
+{
+
+
+
+x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+x=x.replace(/^\s+|\s+$/g,"");
+if (x==c_name)
+{
+return unescape(y);
+  }
+ }
+}
+var song = document.getElementsByTagName('audio')[0];
+var played = false;
+var tillPlayed = getCookie('timePlayed');
+function update()
+{
+if(!played){
+if(tillPlayed){
+song.currentTime = till Played;
+song.play();
+played = true;
+}
+else {
+song.play();
+
+
+played = true;
+}
+}
+else {
+setCookie('time Played', song.currentTime);
+}
+}
+setInterval(update, 1000);
+</script>
+
+
+</body>
+</html>
